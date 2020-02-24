@@ -1,15 +1,19 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 
-import { AuthConsumer } from 'src/store/AuthContext'
+import { AuthConsumer } from 'store/AuthContext'
+import MyFirstComponent from 'components/thing'
+import UserApi from 'api/user'
 
 function LoginPage({ navigation }) {
-  function goToAppStack() {
+  async function goToAppStack() {
+    // const res = await UserApi.connectUser({ name: 'Pierre' })
     console.log('Do something here')
   }
 
   return (
     <View style={styles.container}>
+      <MyFirstComponent />
       <Text>This is the LoginPage</Text>
       <Button title="go to app" onPress={goToAppStack} />
     </View>
